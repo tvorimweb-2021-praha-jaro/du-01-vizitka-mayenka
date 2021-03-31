@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  /*background-color: var(--lightgray);*/
 }
 
 *,
@@ -8,14 +9,30 @@ html {
   box-sizing: inherit;
 }
 
+:root {
+  --spacer: 1rem;
+  --darkblue: hsl(217, 90%, 20%);
+  --darkbluetransparent: hsla(217, 90%, 20%, 0.5);
+  --darkbluesemitransparent: hsla(217, 90%, 20%, 0.8);
+  --lightgray: hsl(231, 100%, 96%);
+  --gray: hsl(0, 0%, 33%);
+  --lightgraytransparent: hsla(231, 50%, 96%, 0.4);
+  --pink: hsl(337, 47%, 52%);
+  --imageborder: hsla(217, 70%, 20%, 0.2);
+}
+
 body {
-  max-width: 60rem;
+  max-width: calc(var(--spacer)*60);
   margin: auto;
-  color: #555;
+  color: var(--gray);
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   line-height: 1.5;
 }
+
+/*main {
+  background-image: linear-gradient(var(--lightgray) var(--lightgraytransparent));
+}*/
 
 header {
   min-height: 300px;
@@ -24,12 +41,10 @@ header {
   background-position: center;
   background-size: cover;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: calc(var(--spacer)*2) var(--spacer);
 }
 
-:root {
-  --spacer: 1rem;
-}
+
 
 nav li {
   display: inline-block;
@@ -37,20 +52,21 @@ nav li {
 }
 
 nav a {
-  color: white;
+  color: var(--lightgray);
   text-align: center;
-  background-color: hsla(217, 90%, 20%, 0.5);
+  text-decoration: none;
+  background-color: var(--darkbluetransparent);
   padding: 20px 30px;
   border-radius: var(--spacer);
-  border: 3px solid 	hsla(217, 90%, 20%, 1);
+  border: 3px solid 	/*hsla(217, 90%, 20%, 1)*/ var(--darkblue);
 }
 nav a:hover {
-  color: #be4c77;
-  background-color:  hsla(217, 90%, 20%, 0.8) ;
+  color: var(--pink);
+  background-color: var(--darkbluesemitransparent);
   }
 
   a:hover {
-    color: #be4c77;
+    color: var(--pink);
   }
 
   /*pokud bych chtěla nechat označený odkaz na který jsem už klikla
@@ -59,22 +75,22 @@ nav a:hover {
   }*/
 
 h1{
-  color: white;
+  color: var(--lightgray);
   text-align: center;
   font-size: 80px;
   padding-top: calc(var(--spacer)*2);
   padding-bottom: calc(var(--spacer)*2);
   margin: 0;
-  text-shadow: 0 3px 10px #555;
+  text-shadow: 0 3px 10px var(--gray);
 }
 
 h1, 
 h2 {
   font-style: 'Roboto', sans-serif;}
-  
+
 h2,
 a {
-  color: #052962;}
+  color: var(--darkblue);}
 
 h2 {
   font-size: 25px;
@@ -85,34 +101,34 @@ h2 {
 
 .omne,
 .kontakt {
-  background-color: #ebeeff;
-  padding: 2rem 4rem;
+  background-color: var(--lightgray);
+  padding: calc(var(--spacer)*2) calc(var(--spacer)*4);
 }
 
 .omne img {
   width: 20%;
   height: 20%;
-  border: 1px solid  hsla(217, 70%, 20%, 0.2);
+  border: 1px solid var(--imageborder);
   border-radius: 50%;
   float: right;
   margin: 10px 60px 40px 50px;
 }
 
 .comamrada {
-  background-color: hsla(231, 50%, 96%, 0.4);
-  padding: 2rem 4rem;
+  background-color: var(--lightgraytransparent);
+  padding: calc(var(--spacer)*2) calc(var(--spacer)*4);
 }
 
 .comamrada img {
-  border: 1px solid  hsla(217, 70%, 20%, 0.2);
+  border: 1px solid var(--imageborder);
   border-radius: 10px;
   margin: var(--spacer);
 }
 
 footer{
-  color: #ebeeff;
+  color: var(--lightgray);
   text-align: center;
-  background-color: #052962;
+  background-color: var(--darkblue);
   padding: 20px 0;
   margin-top: calc(var(--spacer)*-1.5);
 }
